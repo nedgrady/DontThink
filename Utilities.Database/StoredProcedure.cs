@@ -9,7 +9,8 @@ namespace Utilities
 {
     namespace Database
     {
-        class StoredProcedure
+        /*class StoredProcedure
+            :IDisposable
         {
 
             private string _spName;
@@ -26,7 +27,9 @@ namespace Utilities
 
             public async Task<SqlDataReader> ExecuteAsync()
             {
-                (SqlDataReader reader, SqlCommand command, Action action) resultTuple = default;
+                (SqlDataReader reader, SqlCommand command, Action action) resultTuple = DatabaseHelper.E;
+
+
                 SqlDataReader results = resultTuple.reader;
                 _sqlCommand = resultTuple.command;
                 _dispose = resultTuple.action;
@@ -41,6 +44,7 @@ namespace Utilities
             #endregion
         }
 
-    }
 
+    }*/
+    }
 }

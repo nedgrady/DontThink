@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Database", "Utili
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Logging", "Utilities.Logging\Utilities.Logging.csproj", "{61E9220F-65F4-4E3E-993E-77E5B721D5BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.IO", "Utilities.IO\Utilities.IO.csproj", "{1F540508-C369-4849-AEC1-B78D3C7A7CE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{61E9220F-65F4-4E3E-993E-77E5B721D5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61E9220F-65F4-4E3E-993E-77E5B721D5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61E9220F-65F4-4E3E-993E-77E5B721D5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F540508-C369-4849-AEC1-B78D3C7A7CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F540508-C369-4849-AEC1-B78D3C7A7CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F540508-C369-4849-AEC1-B78D3C7A7CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F540508-C369-4849-AEC1-B78D3C7A7CE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
