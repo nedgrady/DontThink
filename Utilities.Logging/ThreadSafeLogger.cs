@@ -11,12 +11,12 @@ namespace Utilities.Logging
 
         private AsyncSyncProvider _logSem = new AsyncSyncProvider(1, 1);
 
-        protected ThreadSafeLogger(TimeSpan? maxLogWait, TimeSpan? sleepInterval, int maxItemsInBuffer)
-            : base(maxLogWait, sleepInterval, maxItemsInBuffer)
+        protected ThreadSafeLogger(TimeSpan? maxLogWait, TimeSpan? sleepInterval, int maxItemsInBuffer, LogLevel minLogLevel = LogLevel.Error)
+            : base(maxLogWait, sleepInterval, maxItemsInBuffer, minLogLevel)
         {
         }
 
-        public async Task ThreadSafeFlushAsync(Func<Task> flush)
+        protected async Task ThreadSafeFlushAsync(Func<Task> flush)
         {
             await Locking.OptimisticLock(_logSem,
                 () => !_isFlushing,
@@ -28,9 +28,12 @@ namespace Utilities.Logging
                 });
         }
 
-        public async Task ThreadSafeAdd(Func<Task> add)
+        protected async Task ThreadSafeLog(Func<Task> logFunc, LogLevel logLevel)
         {
-            await Locking.PessimisticLock(_logSem, add);
+            await DefaultLog(async () => 
+            {
+                await Locking.PessimisticLock(_logSem, logFunc);
+            }, logLevel);
         }
     }
 }

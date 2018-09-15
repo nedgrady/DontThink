@@ -5,17 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Specialized;
 
-namespace Utilities
+namespace Utilities.Logging
 {
-    namespace Logging
+    public interface ILogger<T>
     {
-        public interface ILogger<T>
-        {
-            Task LogAsync(T item);
+        Task LogAsync(T item, LogLevel logLevel);
 
-            Task LogManyAsync(IEnumerable<T> items);
+        Task LogManyAsync(IEnumerable<T> items, LogLevel logLevel);
 
-            Task FlushAsync();
-        }
+        Task FlushAsync();
     }
 }

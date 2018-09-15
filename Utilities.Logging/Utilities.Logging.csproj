@@ -7,8 +7,8 @@
     <ProjectGuid>{61E9220F-65F4-4E3E-993E-77E5B721D5BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Logger</RootNamespace>
-    <AssemblyName>Logger</AssemblyName>
+    <RootNamespace>Utilites.Logging</RootNamespace>
+    <AssemblyName>Utilites.Logger</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -47,6 +47,7 @@
     <Compile Include="ILogger.cs" />
     <Compile Include="FileLogger.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThreadSafeLogger.cs" />
   </ItemGroup>
@@ -54,6 +55,14 @@
     <ProjectReference Include="..\Utilities.Concurrency\Utilities.Concurrency.csproj">
       <Project>{a2a835d1-d326-494a-a396-4cf2311840f8}</Project>
       <Name>Utilities.Concurrency</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities.Debugging\Utilities.Debugging.csproj">
+      <Project>{70cbc940-40cd-4538-85ed-494e704f065f}</Project>
+      <Name>Utilities.Debugging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities.IO\Utilities.IO.csproj">
+      <Project>{1f540508-c369-4849-aec1-b78d3c7a7ce0}</Project>
+      <Name>Utilities.IO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

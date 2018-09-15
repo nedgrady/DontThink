@@ -19,7 +19,7 @@ namespace Utilities.Database
             string @namespace = MaybeGet("Namespace") ?? "Ned.Test";
             string appendText = MaybeGet("AppendText") ?? "THISSHOULDBEAGUID";
             string @class = MaybeGet("ClassName") ?? null;
-            string outputFile = $@"{MaybeGet("OutputPath") ?? System.Environment.CurrentDirectory}\{targetDB}.cs";
+            string outputFile = $@"{MaybeGet("OutputPath") ?? Environment.CurrentDirectory}\{targetDB}.cs";
 
             Console.WriteLine($@"Do you REALLY want to generate code using connection string {connStr}");
             Console.WriteLine($@"which will generate code for the target database {targetDB} into {outputFile}");
@@ -29,7 +29,9 @@ namespace Utilities.Database
             if (Console.ReadKey().Key != ConsoleKey.Y)
                 return;
 
-            await CSsharpGeneratorDatabase.Execute_spC_GenerateAllMethods_dboAsync(
+            CSharpGeneratorDatabaseDatabase.CONNECTION_029C70EF556C469191E9C415EAE10DC0 = connStr;
+
+            await CSharpGeneratorDatabaseDatabase.Execute_spC_GenerateAllMethods_dboAsync(
                 @DBName: targetDB,
                 @ConnectionString: connStr,
                 @AppendText: appendText,

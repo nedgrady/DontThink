@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C784FF2F-88D6-4AB4-9BE3-E3D70ACAD1C3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>Test</AssemblyName>
+    <ProjectGuid>{70CBC940-40CD-4538-85ED-494E704F065F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities.Debugging</RootNamespace>
+    <AssemblyName>Utilities.Debugging</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,17 +20,14 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,33 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Debugging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utilities.Concurrency\Utilities.Concurrency.csproj">
-      <Project>{a2a835d1-d326-494a-a396-4cf2311840f8}</Project>
-      <Name>Utilities.Concurrency</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities.Database\Utilities.Database.csproj">
-      <Project>{f8892959-a2f9-4520-99a2-24fb37a250c8}</Project>
-      <Name>Utilities.Database</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities.Debugging\Utilities.Debugging.csproj">
-      <Project>{70cbc940-40cd-4538-85ed-494e704f065f}</Project>
-      <Name>Utilities.Debugging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities.IO\Utilities.IO.csproj">
-      <Project>{1f540508-c369-4849-aec1-b78d3c7a7ce0}</Project>
-      <Name>Utilities.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities.Logging\Utilities.Logging.csproj">
-      <Project>{61e9220f-65f4-4e3e-993e-77e5b721d5bc}</Project>
-      <Name>Utilities.Logging</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

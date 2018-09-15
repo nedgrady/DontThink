@@ -13,7 +13,9 @@ namespace Utilities
             : SemaphoreSlim,
             IAsyncSyncrhonizationProvider
         {
+#if DEBUG
             private int _count = 0;
+#endif
 
             public AsyncSyncProvider(int initialCount) : base(initialCount)
             {
