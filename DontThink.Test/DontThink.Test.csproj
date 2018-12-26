@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C784FF2F-88D6-4AB4-9BE3-E3D70ACAD1C3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DontThink.Test</RootNamespace>
+    <AssemblyName>DontThink.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="api\.gitignore" />
+    <None Include="api\index.md" />
+    <None Include="App.config" />
+    <None Include="articles\intro.md" />
+    <None Include="articles\toc.md" />
+    <None Include="docfx.json" />
+    <None Include="index.md" />
+    <None Include="packages.config" />
+    <None Include="toc.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DontThink.Utilities.Compilation\DontThink.Utilities.Compilation.csproj">
+      <Project>{c9b391d8-0806-4ec8-9787-4dee06cabdb7}</Project>
+      <Name>DontThink.Utilities.Compilation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DontThink.Utilities.Concurrency\DontThink.Utilities.Concurrency.csproj">
+      <Project>{a2a835d1-d326-494a-a396-4cf2311840f8}</Project>
+      <Name>DontThink.Utilities.Concurrency</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DontThink.Utilities.Database\DontThink.Utilities.Database.csproj">
+      <Project>{f8892959-a2f9-4520-99a2-24fb37a250c8}</Project>
+      <Name>DontThink.Utilities.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DontThink.Utilities.Debugging\DontThink.Utilities.Debugging.csproj">
+      <Project>{70cbc940-40cd-4538-85ed-494e704f065f}</Project>
+      <Name>DontThink.Utilities.Debugging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DontThink.Utilities.IO\DontThink.Utilities.IO.csproj">
+      <Project>{1f540508-c369-4849-aec1-b78d3c7a7ce0}</Project>
+      <Name>DontThink.Utilities.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DontThink.Utilities.Logging\DontThink.Utilities.Logging.csproj">
+      <Project>{61e9220f-65f4-4e3e-993e-77e5b721d5bc}</Project>
+      <Name>DontThink.Utilities.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\docfx.console.2.39.2\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.39.2\build\docfx.console.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\docfx.console.2.39.2\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.39.2\build\docfx.console.targets'))" />
+  </Target>
+</Project>
