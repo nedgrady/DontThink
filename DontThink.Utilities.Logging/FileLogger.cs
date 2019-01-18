@@ -20,7 +20,6 @@ namespace DontThink.Utilities.Logging
 
         protected override IEnumerable<string> Buffer => _strings;
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -54,7 +53,7 @@ namespace DontThink.Utilities.Logging
         public async override Task LogAsync(string str, LogLevel logLevel)
         {
 #if DEBUG
-            Console.WriteLine($"Logging: {str}");
+            //Console.WriteLine($"Logging: {str}");
 #endif
             await ThreadSafeLog(async () => _strings.Add(_transformFunc?.Invoke(str, logLevel) ?? str), logLevel);
 
